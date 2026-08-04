@@ -48,7 +48,7 @@ abstract class Collection implements ArrayAccess, Countable
      *
      * @return void
      */
-    public function __construct($id, Closure $callback = null)
+    public function __construct($id, ?Closure $callback = null)
     {
         $this->id = $id;
 
@@ -86,7 +86,7 @@ abstract class Collection implements ArrayAccess, Countable
      *
      * @return void
      */
-    public function executeCallback(Closure $callback = null): void
+    public function executeCallback(?Closure $callback = null): void
     {
         if ($callback instanceof Closure) {
             call_user_func($callback, $this);
