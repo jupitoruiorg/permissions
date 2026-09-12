@@ -32,7 +32,7 @@ class Group extends Collection
      *
      * @return \Cartalyst\Permissions\Collection
      */
-    public function permission($id, Closure $callback = null): Collection
+    public function permission($id, ?Closure $callback = null): Collection
     {
         if (! $permission = $this->find($id)) {
             $this->put($id, $permission = new Permission($id));

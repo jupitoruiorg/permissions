@@ -32,7 +32,7 @@ class Container extends Collection
      *
      * @return \Cartalyst\Permissions\Collection
      */
-    public function group($id, Closure $callback = null): Collection
+    public function group($id, ?Closure $callback = null): Collection
     {
         if (! $group = $this->find($id)) {
             $this->put($id, $group = new Group($id));
